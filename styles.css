@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #313841;
+}
+
+
+#container {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-item {
+    background: #dcc377;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.grid-item-hover {
+    background: #4c545e;
+}
