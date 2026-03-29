@@ -2,6 +2,10 @@
 // make a reference to main container
 const container = document.querySelector("#container");
 
+// add button on top of the screen to modify grid
+const button = document.createElement("button");
+button.textContent = "Modify Grid";
+document.body.prepend(button);
 
 // create grid of divs and place them inside container
 const NUMBER_OF_COLUMNS = 16;
