@@ -3,9 +3,14 @@
 const container = document.querySelector("#container");
 
 // add button on top of the screen to modify grid
+const buttonContainer = document.createElement("div");
+buttonContainer.classList.add("button-container");
+document.body.prepend(buttonContainer);
+
+
 const button = document.createElement("button");
 button.textContent = "Modify Grid";
-document.body.prepend(button);
+buttonContainer.appendChild(button);
 
 // create grid of divs and place them inside container
 const NUMBER_OF_COLUMNS = 16;
