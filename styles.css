@@ -1,3 +1,8 @@
+:root {
+    --container-width: 600px;
+}
+
+
 body {
     display: flex;
     flex-direction: column;
@@ -9,8 +14,8 @@ body {
 
 
 #container {
-    width: 600px;
-    height: 600px;
+    width: var(--container-width);
+    height: var(--container-width);
     display: flex;
     flex-wrap: wrap;
 }
@@ -23,4 +28,16 @@ body {
 
 .grid-item-hover {
     background: #4c545e;
+}
+
+
+/* BUTTON styles  */
+.button-container {
+    width: var(--container-width);
+    /* background: aquamarine; */
+    align-items: left;
+}
+
+button {
+    background: #febc2e;
 }
