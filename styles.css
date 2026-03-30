@@ -9,7 +9,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: #313841;
+    background: #2d306e;
 }
 
 
@@ -21,7 +21,7 @@ body {
 }
 
 .grid-item {
-    background: #dcc377;
+    background: #d5cac3;
     border: 1px solid black;
     box-sizing: border-box;
 }
@@ -41,11 +41,17 @@ body {
 }
 
 button {
-    background: #78909e;
+    background: #8993a3;
     font-weight: 700;
     font-size: 18px;
     border-radius: 8px;
+    cursor: pointer;    
 
     padding: 6px 12px;
     font-family: system-ui, -apple-system, sans-serif;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .2);
 }
