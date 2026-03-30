@@ -9,7 +9,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: #2d306e;
+    background: #212342;
 }
 
 
@@ -24,10 +24,6 @@ body {
     background: #d5cac3;
     border: 1px solid black;
     box-sizing: border-box;
-}
-
-.grid-item-hover {
-    background: #4c545e;
 }
 
 
