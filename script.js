@@ -7,32 +7,64 @@ const buttonContainer = document.createElement("div");
 buttonContainer.classList.add("button-container");
 document.body.prepend(buttonContainer);
 
-
 const button = document.createElement("button");
 button.textContent = "Modify Grid";
+button.addEventListener("click", () => {
+    const squares = getNumberOfSquares();
+
+    if (squares != null) {
+        createGrid(squares);
+    }
+});
+
 buttonContainer.appendChild(button);
 
-// create grid of divs and place them inside container
-const NUMBER_OF_COLUMNS = 16;
-const CONTAINER_WIDTH = container.offsetWidth;
-console.log(CONTAINER_WIDTH)
+// prompt user for number, validate input, return integer.
+function getNumberOfSquares() {
+    const input = prompt("Enter number of squares per side for new grid");
+    const number = Number(input);
 
-for (let i = 0; i < NUMBER_OF_COLUMNS * NUMBER_OF_COLUMNS; i++) {
-    const square = document.createElement("div");
-
-    // assign class
-    square.classList.add("grid-item")
-    
-    // give square dimensions
-    square.style.height = `${(CONTAINER_WIDTH / NUMBER_OF_COLUMNS)}px`;
-    square.style.width = `${(CONTAINER_WIDTH / NUMBER_OF_COLUMNS)}px`;
-
-    // set up event listeners for hovering
-    square.addEventListener("mouseenter", () => {square.classList.add("grid-item-hover")});
-
-
-    container.appendChild(square);
+    if (Number.isInteger(number) && number > 0 && number < 100) {
+        return number;
+    } else {
+        alert("Invalid input. Please enter a positive integer less than 100.");
+        return null;
+    }
 }
 
 
+function clearContainer() {
+    while (container.lastChild) {
+        container.removeChild(container.lastChild);
+    }
+}
 
+
+function createGrid(num) {
+    const NUMBER_OF_SQUARES = num;
+    const CONTAINER_WIDTH = container.offsetWidth;
+
+    // make sure container is clear
+    clearContainer();
+    
+    for (let i = 0; i < NUMBER_OF_SQUARES * NUMBER_OF_SQUARES; i++) {
+        const square = document.createElement("div");
+
+        // assign class
+        square.classList.add("grid-item")
+        
+        // give square dimensions
+        square.style.height = `${(CONTAINER_WIDTH / NUMBER_OF_SQUARES)}px`;
+        square.style.width = `${(CONTAINER_WIDTH / NUMBER_OF_SQUARES)}px`;
+
+        // set up event listeners for hovering
+        square.addEventListener("mouseenter", () => {square.classList.add("grid-item-hover")});
+
+
+        container.appendChild(square);
+    }
+}
+
+
+// create initial grid
+createGrid(16);
